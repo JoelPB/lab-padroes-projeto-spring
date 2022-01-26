@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Iterator;
 
 @RestController
 @RequestMapping("clientes")
@@ -16,7 +15,7 @@ public class ClienteRestController {
     private ClienteService clienteService;
 
     @GetMapping
-    public ResponseEntity<Iterator<Cliente>> bucarTodos(){
+    public ResponseEntity<Iterable<Cliente>> bucarTodos(){
         return ResponseEntity.ok(clienteService.buscarTodos());
     }
 
